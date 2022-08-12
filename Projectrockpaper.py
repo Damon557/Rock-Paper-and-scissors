@@ -1,6 +1,5 @@
 from random import choice
 possible_actions = ["rock", "paper", "scissors", "spock"]
-computer_action = choice(possible_actions)
 user = input ("Do you want to play? Yes or No: ")
 while True:
     if user.lower() == "no":
@@ -8,21 +7,31 @@ while True:
         break
     if user.lower() == "yes":
             user_action = input("Choose an action (Rock, paper, scissors, or Spock): ")
+            computer_action = choice(possible_actions)
             if user_action == computer_action:
                 print(f"Both players selected {user_action}. It's a tie!")
             elif user_action == "rock":
                 if computer_action == "scissors":
                     print("Rock smashes scissors! You win!")
+                elif computer_action == "spock":
+                    print("Spock destroys all, sucks to suck.")
+
                 else:
                     print("Paper covers rock! DEAD.")
             elif user_action == "paper":
                 if computer_action == "rock":
                     print("Paper covers rock! You win!")
+                elif computer_action == "spock":
+                    print("Spock destroys all, sucks to suck.")
+
                 else:
                     print("Scissors cuts paper! DEAD.")
             elif user_action == "scissors":
                 if computer_action == "paper":
                     print("Scissors cuts paper! You win!")
+                elif computer_action == "spock":
+                    print("Spock destroys all, sucks to suck.")
+
                 else:
                     print("Rock smashes scissors! DEAD.")
             elif user_action == "spock":
